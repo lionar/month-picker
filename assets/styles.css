@@ -1,17 +1,19 @@
+@import "./theme.css";
+
 #month-picker {
     width: 270px;
     font-family: 'Roboto', sans-serif;
     box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-    background-color: white;
+    background-color: var(--surface, #fff);
+    user-select: none;
 }
 
 #month-picker > header {
     height: 64px;
-    background-color: rgb(205 220 57);
+    background-color: var(--primary, rgb(205 220 57));
     display: grid;
     align-items: center;
     padding: 0 16px;
-    user-select: none;
 }
 
 #month-picker h1 {
@@ -19,13 +21,13 @@
     font-size: 1.25rem;
     font-weight: 500;
     letter-spacing: 0.0125em;
-    color: white;
+    color: var(--on-primary, #fff);
     margin: 0;
     cursor: default;
 }
 
 #month-picker .chevron {
-    color: rgba(0,0,0,.87);
+    color: var(--primary-text, rgba(0,0,0,.87));
     cursor: pointer;
 }
 
@@ -37,7 +39,6 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     margin-bottom: 16px;
-    user-select: none;
 }
 
 #month-picker main header h2 {
@@ -69,20 +70,26 @@
     font-size: 13px;
     cursor: pointer;
     box-sizing: border-box;
-    color: rgba(0,0,0,.87);
+    color: var(--primary-text, rgba(0,0,0,.87));
+    transition: background-color 0.25s ease;
 }
+
+#month-picker ol li:hover {
+    background-color: rgba(0,0,0,.04);
+}
+
+
 
 #month-picker ol li.now {
     border: 1px solid rgba(0,0,0,.38);
 }
 
 #month-picker ol li.selected {
-    background-color: rgb(205 220 57);
-    border: 1px solid rgb(205 220 57);
-    /* box-shadow: inset 0 0 0 1.5px #fff; */
-    color: #fff;
+    background-color: var(--primary, rgb(205 220 57));
+    border: 1px solid var(--primary, rgb(205 220 57));
+    color: var(--sheet, #fff);
 }
 
 #month-picker ol li.selected.now {
-    box-shadow: inset 0 0 0 1.5px #fff;
+    box-shadow: inset 0 0 0 1.5px var(--sheet, #fff);;
 }

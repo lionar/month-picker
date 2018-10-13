@@ -2,7 +2,7 @@ module Main exposing (main)
 
 import Browser
 import Html exposing (..)
-import Mdc.MonthPicker as MonthPicker
+import MonthPicker
 import Time exposing (Month(..))
 
 

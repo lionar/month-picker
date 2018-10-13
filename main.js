@@ -5382,15 +5382,15 @@ var elm$html$Html$Attributes$stringProperty = F2(
 			elm$json$Json$Encode$string(string));
 	});
 var elm$html$Html$Attributes$class = elm$html$Html$Attributes$stringProperty('className');
-var author$project$Mdc$MonthPicker$current = F2(
+var author$project$MonthPicker$current = F2(
 	function (now, date) {
 		return _Utils_eq(now, date) ? elm$html$Html$Attributes$class('now') : elm$html$Html$Attributes$class('');
 	});
-var author$project$Mdc$MonthPicker$sel = F2(
+var author$project$MonthPicker$sel = F2(
 	function (selected, date) {
 		return _Utils_eq(selected, date) ? elm$html$Html$Attributes$class('selected') : elm$html$Html$Attributes$class('');
 	});
-var author$project$Mdc$MonthPicker$toMonthString = function (month) {
+var author$project$MonthPicker$toMonthString = function (month) {
 	switch (month.$) {
 		case 'Jan':
 			return 'Jan';
@@ -5438,7 +5438,7 @@ var elm$html$Html$Events$onClick = function (msg) {
 		'click',
 		elm$json$Json$Decode$succeed(msg));
 };
-var author$project$Mdc$MonthPicker$monthItem = F4(
+var author$project$MonthPicker$monthItem = F4(
 	function (select, now, selected, date) {
 		var month = date.a;
 		var year = date.b;
@@ -5448,13 +5448,13 @@ var author$project$Mdc$MonthPicker$monthItem = F4(
 				[
 					elm$html$Html$Events$onClick(
 					select(date)),
-					A2(author$project$Mdc$MonthPicker$sel, selected, date),
-					A2(author$project$Mdc$MonthPicker$current, now, date)
+					A2(author$project$MonthPicker$sel, selected, date),
+					A2(author$project$MonthPicker$current, now, date)
 				]),
 			_List_fromArray(
 				[
 					elm$html$Html$text(
-					author$project$Mdc$MonthPicker$toMonthString(month))
+					author$project$MonthPicker$toMonthString(month))
 				]));
 	});
 var elm$time$Time$Apr = {$: 'Apr'};
@@ -5467,7 +5467,7 @@ var elm$time$Time$Jun = {$: 'Jun'};
 var elm$time$Time$May = {$: 'May'};
 var elm$time$Time$Nov = {$: 'Nov'};
 var elm$time$Time$Sep = {$: 'Sep'};
-var author$project$Mdc$MonthPicker$months = function (year) {
+var author$project$MonthPicker$months = function (year) {
 	return _List_fromArray(
 		[
 			_Utils_Tuple2(elm$time$Time$Jan, year),
@@ -5484,10 +5484,10 @@ var author$project$Mdc$MonthPicker$months = function (year) {
 			_Utils_Tuple2(elm$time$Time$Dec, year)
 		]);
 };
-var author$project$Mdc$MonthPicker$toTitle = function (_n0) {
+var author$project$MonthPicker$toTitle = function (_n0) {
 	var month = _n0.a;
 	var year = _n0.b;
-	return author$project$Mdc$MonthPicker$toMonthString(month) + (', ' + elm$core$String$fromInt(year));
+	return author$project$MonthPicker$toMonthString(month) + (', ' + elm$core$String$fromInt(year));
 };
 var elm$core$List$foldrHelper = F4(
 	function (fn, acc, ctr, ls) {
@@ -5566,7 +5566,7 @@ var elm$html$Html$i = _VirtualDom_node('i');
 var elm$html$Html$main_ = _VirtualDom_node('main');
 var elm$html$Html$ol = _VirtualDom_node('ol');
 var elm$html$Html$Attributes$id = elm$html$Html$Attributes$stringProperty('id');
-var author$project$Mdc$MonthPicker$view = F4(
+var author$project$MonthPicker$view = F4(
 	function (msgs, now, selected, viewYear) {
 		return A2(
 			elm$html$Html$div,
@@ -5587,7 +5587,7 @@ var author$project$Mdc$MonthPicker$view = F4(
 							_List_fromArray(
 								[
 									elm$html$Html$text(
-									author$project$Mdc$MonthPicker$toTitle(selected))
+									author$project$MonthPicker$toTitle(selected))
 								]))
 						])),
 					A2(
@@ -5636,8 +5636,8 @@ var author$project$Mdc$MonthPicker$view = F4(
 							_List_Nil,
 							A2(
 								elm$core$List$map,
-								A3(author$project$Mdc$MonthPicker$monthItem, msgs.select, now, selected),
-								author$project$Mdc$MonthPicker$months(viewYear)))
+								A3(author$project$MonthPicker$monthItem, msgs.select, now, selected),
+								author$project$MonthPicker$months(viewYear)))
 						]))
 				]));
 	});
@@ -5651,7 +5651,7 @@ var author$project$Main$view = function (_n0) {
 		_List_fromArray(
 			[
 				A4(
-				author$project$Mdc$MonthPicker$view,
+				author$project$MonthPicker$view,
 				{next: author$project$Main$Next, prev: author$project$Main$Prev, select: author$project$Main$Select},
 				now,
 				selected,
@@ -9844,4 +9844,4 @@ var elm$browser$Browser$sandbox = function (impl) {
 var author$project$Main$main = elm$browser$Browser$sandbox(
 	{init: author$project$Main$init, update: author$project$Main$update, view: author$project$Main$view});
 _Platform_export({'Main':{'init':author$project$Main$main(
-	elm$json$Json$Decode$succeed(_Utils_Tuple0))({"versions":{"elm":"0.19.0"},"types":{"message":"Main.Msg","aliases":{"Mdc.MonthPicker.Date":{"args":[],"type":"( Time.Month, Mdc.MonthPicker.Year )"},"Mdc.MonthPicker.Year":{"args":[],"type":"Basics.Int"}},"unions":{"Main.Msg":{"args":[],"tags":{"Next":[],"Prev":[],"Select":["Mdc.MonthPicker.Date"]}},"Basics.Int":{"args":[],"tags":{"Int":[]}},"Time.Month":{"args":[],"tags":{"Jan":[],"Feb":[],"Mar":[],"Apr":[],"May":[],"Jun":[],"Jul":[],"Aug":[],"Sep":[],"Oct":[],"Nov":[],"Dec":[]}}}}})}});}(this));
+	elm$json$Json$Decode$succeed(_Utils_Tuple0))({"versions":{"elm":"0.19.0"},"types":{"message":"Main.Msg","aliases":{"MonthPicker.Date":{"args":[],"type":"( Time.Month, MonthPicker.Year )"},"MonthPicker.Year":{"args":[],"type":"Basics.Int"}},"unions":{"Main.Msg":{"args":[],"tags":{"Next":[],"Prev":[],"Select":["MonthPicker.Date"]}},"Basics.Int":{"args":[],"tags":{"Int":[]}},"Time.Month":{"args":[],"tags":{"Jan":[],"Feb":[],"Mar":[],"Apr":[],"May":[],"Jun":[],"Jul":[],"Aug":[],"Sep":[],"Oct":[],"Nov":[],"Dec":[]}}}}})}});}(this));

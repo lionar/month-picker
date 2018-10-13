@@ -1,4 +1,4 @@
-module Mdc.MonthPicker exposing (Date, view)
+module MonthPicker exposing (Date, view)
 
 import Html exposing (..)
 import Html.Attributes exposing (class, id)

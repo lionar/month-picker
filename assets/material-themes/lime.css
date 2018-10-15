@@ -1,0 +1,10 @@
+:root {
+    --primary: #CDDC39;
+    --background: #303030;
+    --surface: #424242;
+    --on-primary: #fff;
+    --on-surface: #fff;
+    --primary-text: #fff;
+    --hint-text: rgba(255, 255, 255, 0.5);
+    --hint: rgba(255, 255, 255, 0.04);
+}

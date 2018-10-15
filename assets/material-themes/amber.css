@@ -1,6 +1,10 @@
 :root {
     --primary: #FFC107;
     --surface: #fff;
+    --background: #f2f2f2;
     --on-primary: #fff;
+    --on-surface: rgba(0,0,0,0.87);
     --primary-text: rgba(0,0,0,0.87);
+    --hint-text: rgba(0, 0, 0, 0.5);
+    --hint: rgba(0, 0, 0, 0.04);
 }

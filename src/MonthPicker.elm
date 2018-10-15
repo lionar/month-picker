@@ -1,7 +1,7 @@
 module MonthPicker exposing (Date, view)
 
 import Html exposing (..)
-import Html.Attributes exposing (class, id)
+import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import Time exposing (Month(..))
 
@@ -60,7 +60,7 @@ type alias Msgs msg =
 
 view : Msgs msg -> Date -> Date -> Year -> Html msg
 view msgs now selected viewYear =
-    div [ id "month-picker" ] 
+    div [ class "month-picker" ] 
         [ header [] 
             [ h1 [] [ text <| toTitle selected ]
             ]
